@@ -1,25 +1,8 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Sqaure from './Sqaure'
 
-const board = () => {
-  const [board,setBoard]=useState(Array(9).fill(null));
-  const[isNext,setIsNext]=useState(false);
-
-
+const board = ({board,handleSqaureClick}) => {
   
-  const handleSqaureClick =(position)=>{
-    if(board[position]!=null) return;
-    setBoard((prev)=>{
-      return prev.map((square,pos)=>{
-        if(pos==position) {
-          return isNext?'X':'O';
-        }
-        return square;
-      });
-     
-    })
-    setIsNext((prev)=> !prev);
-  }
 
   const renderSquare=(position)=>{
 
