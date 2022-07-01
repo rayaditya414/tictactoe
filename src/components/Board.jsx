@@ -1,15 +1,15 @@
 import React from 'react'
 import Sqaure from './Sqaure'
 
-const board = ({board,handleSqaureClick}) => {
-  
-
+const board = ({board,handleSqaureClick,winningSquare}) => {
+ 
   const renderSquare=(position)=>{
-
+    const isWinningSquare=winningSquare.includes(position);
     return (
       <Sqaure 
       value={board[position]}
       onClick={ ()=> handleSqaureClick(position)}
+      isWinningSquare={isWinningSquare}
       />
     );
   };
